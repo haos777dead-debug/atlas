@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#14070f">
+<title>FloraYou — атласні та мильні квіти ручної роботи</title>
+<meta name="description" content="Збери свій букет з атласних або мильних квітів: матеріал, квіти, кольори, зелень, упаковка — ціна одразу. Ручна робота, весілля, подарунки, фотозони.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&subset=cyrillic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a href="#top" class="logo">Flora<span>You</span></a>
+  <nav class="nav" id="nav">
+    <a href="#builder">Зібрати букет</a><a href="#gallery">Роботи</a><a href="#how">Як це працює</a><a href="#about">Про мене</a>
+    <a href="tel:+380505263729" class="nav__phone">+380 50 526 37 29</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <i class="blob b1"></i><i class="blob b2"></i>
+  <i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="petal p5"></i>
+  <div class="hero__text">
+    <p class="eyebrow">Атласні та мильні квіти ручної роботи</p>
+    <h1>Букет, який <em>ніколи не зів’яне</em></h1>
+    <p class="lead">Кожну квітку я створюю вручну — саме в тих кольорах і в тій кількості, які обираєте ви. Збери букет у конструкторі й одразу побач, як він виглядатиме.</p>
+    <div class="hero__btns"><a href="#builder" class="btn">Зібрати свій букет</a><a href="#gallery" class="btn btn--ghost">Мої роботи</a></div>
+    <ul class="stats"><li><b>12</b><span>кольорів</span></li><li><b>від 1 шт</b><span>будь-яка кількість</span></li><li><b>40 ₴</b><span>від 25 шт — 35 ₴</span></li></ul>
+  </div>
+  <div class="hero__img">
+    <div class="arch"><img src="https://static.tildacdn.ink/tild6362-6266-4636-b463-653464613164/ChatGPT_Image_18__20.png" alt="Атласні квіти FloraYou"></div>
+    <div class="glass g1">✋ <b>100% ручна робота</b></div>
+    <div class="glass g2">💐 <b>Під ваш колір</b></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Атласні квіти</span><span>Мильні квіти</span><span>Весілля</span><span>Фотозони</span><span>Подарунки</span><span>Інтер’єр</span>
+  <span>Атласні квіти</span><span>Мильні квіти</span><span>Весілля</span><span>Фотозони</span><span>Подарунки</span><span>Інтер’єр</span>
+</div></div>
+
+<section class="builder" id="builder">
+  <div class="section-head rv"><p class="eyebrow">Конструктор</p><h2>Збери свій букет</h2>
+    <p>Готових букетів у мене немає — кожен створюється під вас. Обирайте компоненти й дивіться, як змінюється букет.</p></div>
+  <div class="bwrap">
+    <div class="preview">
+      <div class="stage" id="stage"></div>
+      <svg width="0" height="0" style="position:absolute" id="defs" aria-hidden="true"></svg>
+      <div class="pv__bar"><span id="pvMeta"></span><span>схематичний вигляд</span></div>
+    </div>
+    <div class="panel">
+      <div class="step"><h3><b>1</b> Матеріал</h3>
+        <div class="cards" id="mats"></div><p class="step__note" id="matNote"></p>
+        <details class="cmpd"><summary>Чим відрізняються атлас і мило?</summary><div id="cmp"></div></details>
+      </div>
+      <div class="step"><h3><b>2</b> Квіти <small>(можна поєднати до 3)</small></h3><div class="cards" id="types"></div></div>
+      <div class="step"><h3><b>3</b> Кольори <small>(до 4)</small></h3><div class="swatches" id="colors"></div><p class="step__note" id="colorNames"></p></div>
+      <div class="step"><h3><b>4</b> Кількість</h3>
+        <div class="qty"><button type="button" id="minus" aria-label="Менше">−</button><input type="number" id="qty" value="11" min="1" max="200" inputmode="numeric"><button type="button" id="plus" aria-label="Більше">+</button></div>
+        <div class="quick" id="quick"></div><p class="step__note" id="qtyNote"></p>
+      </div>
+      <div class="step"><h3><b>5</b> Зелень</h3><div class="chips" id="greens"></div></div>
+      <div class="step"><h3><b>6</b> Доповнення <small>(за бажанням)</small></h3><div class="chips" id="extras"></div></div>
+      <div class="step"><h3><b>7</b> Оформлення</h3><div class="chips" id="wraps"></div>
+        <div id="ribbonRow" class="ribbonRow" hidden><p class="step__note" id="ribbonLbl"></p><div class="swatches" id="ribbons"></div></div>
+      </div>
+
+      <div class="order">
+        <div class="total"><span>Орієнтовно</span><strong id="total">0 грн</strong><small id="unit"></small></div>
+        <ul class="sum" id="sum"></ul>
+        <form id="orderForm" novalidate>
+          <div class="row"><input id="name" type="text" placeholder="Ваше ім’я" autocomplete="name" required><input id="contact" type="text" placeholder="Телефон або @telegram" autocomplete="tel" required></div>
+          <textarea id="message" rows="3" placeholder="Побажання: привід, дата, стиль…"></textarea>
+          <input id="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn--full" id="send" type="submit">Надіслати замовлення</button>
+          <p class="status" id="status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="section-head rv"><p class="eyebrow">Портфоліо</p><h2>Мої роботи</h2><p>Сподобалась композиція? Натисніть «Хочу такий» — я зроблю схожу в потрібних вам кольорах.</p></div>
+  <div class="chips filters" id="filters"></div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<section class="how" id="how">
+  <div class="section-head rv"><p class="eyebrow">Процес</p><h2>Як це працює</h2></div>
+  <div class="how__grid">
+    <div class="rv"><b>01</b><h3>Збираєте букет</h3><p>Обираєте матеріал, квіти, кольори й кількість — або надсилаєте фото-натхнення.</p></div>
+    <div class="rv"><b>02</b><h3>Погоджуємо</h3><p>Я пишу вам, уточнюю деталі, дату й остаточну вартість.</p></div>
+    <div class="rv"><b>03</b><h3>Створюю вручну</h3><p>Кожна квітка — з уважністю до дрібниць, у ваших кольорах.</p></div>
+    <div class="rv"><b>04</b><h3>Упаковка й доставка</h3><p>Охайне оформлення — букет готовий до подарунку.</p></div>
+  </div>
+</section>
+
+<section class="occasions">
+  <div class="section-head rv"><h2>Для будь-якого випадку</h2></div>
+  <div class="occ__grid"><div class="rv"><i>💍</i>Весілля та бутоньєрки</div><div class="rv"><i>📸</i>Фотозони та декор</div><div class="rv"><i>🎁</i>Подарунки</div><div class="rv"><i>🏡</i>Інтер’єр</div></div>
+</section>
+
+<section class="about" id="about">
+  <div class="rv"><p class="eyebrow">Про мене</p><h2>Привіт, я Аня 💐</h2>
+    <p>Я створюю квіти вручну, з любов’ю до деталей. Кожна композиція — особлива історія, зроблена з турботою, щоб подарувати радість і емоції. Працюю з індивідуальними замовленнями — для свят, подарунків чи просто щоб зробити комусь приємно.</p>
+    <div class="contacts">
+      <a class="btn" href="https://t.me/0505263729" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn btn--ghost" href="tel:+380505263729">+380 50 526 37 29</a>
+      <a class="btn btn--ghost" href="mailto:florayou77@gmail.com">Email</a>
+      <a class="btn btn--ghost" href="https://www.tiktok.com/@user9949553122881" target="_blank" rel="noopener">TikTok</a>
+    </div></div>
+</section>
+</main>
+<footer class="footer">© FloraYou — квіти ручної роботи</footer>
+
+<div class="dock" id="dock"><div><small>Орієнтовно</small><b id="dockTotal"></b></div><button type="button" class="btn" id="dockBtn">Замовити</button></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
